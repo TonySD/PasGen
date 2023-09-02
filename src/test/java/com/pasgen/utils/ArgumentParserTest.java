@@ -1,6 +1,6 @@
 package test.java.com.pasgen.utils;
 
-import main.java.com.pasgen.utils.ArgumentParser;
+import main.java.com.pasgen.utils.argument.ArgumentParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

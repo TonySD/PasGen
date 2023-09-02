@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UpperLowerCaseTest {
+    static String testingString = "test";
 
     @Test
     void isOver() {
-        String testingString = "test";
         UpperLowerCase generator = new UpperLowerCase(testingString);
         for (int i = 0; i < Math.pow(2, testingString.length()); i++) {
             generator.getNextVariation();
@@ -19,7 +19,6 @@ class UpperLowerCaseTest {
 
     @Test
     void getNextVariation() {
-        String testingString = "test";
         UpperLowerCase generator = new UpperLowerCase(testingString);
 
         assertEquals(generator.getNextVariation(), testingString);
@@ -30,5 +29,18 @@ class UpperLowerCaseTest {
         }
 
         assertEquals(testingString.toUpperCase(), generator.getNextVariation());
+    }
+
+    @Test
+    void findTest() {
+        UpperLowerCase generator = new UpperLowerCase(testingString);
+        String stringToFind = "TeST";
+        String current = "";
+        while (!generator.isOver()) {
+            current = generator.getNextVariation();
+            if (current.equals(stringToFind)) break;
+        }
+
+        assertEquals(stringToFind, current);
     }
 }

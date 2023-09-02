@@ -8,4 +8,5 @@ public abstract class Generator {
     }
 
     public abstract String getNextVariation();
+    public abstract boolean isOver();
 }

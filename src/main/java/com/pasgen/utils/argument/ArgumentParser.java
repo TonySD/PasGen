@@ -1,4 +1,4 @@
-package main.java.com.pasgen.utils;
+package main.java.com.pasgen.utils.argument;
 
 import java.util.*;
 

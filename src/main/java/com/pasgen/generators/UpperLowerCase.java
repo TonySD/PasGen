@@ -1,7 +1,7 @@
 package main.java.com.pasgen.generators;
 
 public class UpperLowerCase extends Generator {
-    private int amountOfBits;
+    private int amountOfBits;  // amount of consonant letters
     private final int finalInt;
     private int bitArray = 0;
 

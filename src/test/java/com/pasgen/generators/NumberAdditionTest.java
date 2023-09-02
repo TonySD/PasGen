@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NumberAdditionTest {
+    static String testingString = "test";
 
     @Test
     void isOver() {
-        String testingString = "test";
+
         NumberAddition generator = new NumberAddition(testingString, 2);
         for (int i = 0; i <= 110; i++) {
             generator.getNextVariation();
@@ -20,8 +21,6 @@ class NumberAdditionTest {
 
     @Test
     void getNextVariation() {
-        String testingString = "test";
-
         for (int i = 1; i < 4; i++) {
             NumberAddition generator = new NumberAddition(testingString, i);
             assertEquals(testingString + "0", generator.getNextVariation());
@@ -37,5 +36,17 @@ class NumberAdditionTest {
 
             assertEquals("", generator.getNextVariation());
         }
+    }
+
+    @Test
+    void testFind() {
+        String stringToFind = testingString + "1337";
+        NumberAddition generator = new NumberAddition(testingString, 4);
+        String current = "";
+        while (!generator.isOver()) {
+            current = generator.getNextVariation();
+            if (current.equals(stringToFind)) break;
+        }
+        assertEquals(stringToFind, current);
     }
 }
